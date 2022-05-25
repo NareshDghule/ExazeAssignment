@@ -6,7 +6,8 @@ import constant from '../../utility/constant';
 import DeviceInfoModule from '../../utility/react-native-module';
 import {navigateToScreen} from '../../utility/helper';
 import {Platform} from 'react-native';
-const WelcomeScreen = (_props: {navigation: object}) => {
+const WelcomeScreen = (props: {navigation: object}) => {
+  const {navigation} = props;
   const {WELCOME_SCREEN} = constant;
   const dispatch = useDispatch();
   const [states, setStates] = useState({
@@ -43,10 +44,7 @@ const WelcomeScreen = (_props: {navigation: object}) => {
     if (userName !== '') {
       setIsValidationFailed(false);
       dispatch(storeUserName(userName))
-        .then(() => {
-          navigateToScreen('VariationScreen', {});
-        })
-        .catch(() => {});
+      navigation.navigate('VariationScreen');
     } else {
       setIsValidationFailed(true);
       setValidationMessage(WELCOME_SCREEN.VALIDATION_ERROR);

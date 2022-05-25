@@ -1,6 +1,4 @@
 import * as React from 'react';
-import {enableScreens} from 'react-native-screens';
-enableScreens();
 import {
   NavigationContainer,
   createNavigationContainerRef,

@@ -31,7 +31,7 @@ const WelcomeScreenView = (props: {
       )}
       <View style={Styles.secondContainer}>
         <Input
-          testID="input"
+          testID="userNameInput"
           placeHolder={WELCOME_SCREEN.USER_NAME_PLACEHOLDER}
           inputValue={userName}
           onChangeText={(text: any) => handleTextChange('userName', text)}
